@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-work-log"
+version = "0.1.0"
+description = "Produto de captura: linguagem natural -> Atividade do hermes-core"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "hermes-core @ git+ssh://git@github.com/gabri-eu/hermes-core.git@418a23047a4bc2042e6779df95a9cf5f205716a5",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
